@@ -6,6 +6,7 @@ import cors from 'cors'
 
 // Import Routes
 import { router as guruRoute } from './routes/guru'
+import { emptyRekap } from './helper/emptyRekap'
 
 // Init
 const app: Express = express()
@@ -46,7 +47,8 @@ app.use('/', (req: Request, res: Response) => {
 
 // Connect to database
 connect(config.MONGO_URI)
-  .then(() => {
+  .then(async () => {
+    await emptyRekap()
     console.log(
       '[server]: OK! successfully-connected-to-mongodb. Starting server...'
     )

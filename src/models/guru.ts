@@ -8,24 +8,7 @@ const GuruSchema: Schema = new Schema<IGuru>(
       required: [true, 'Nama guru tidak  boleh kosong.'],
       unique: true,
     },
-    rekap: {
-      type: [
-        {
-          year: String,
-          months: [
-            {
-              month: String,
-              days: [
-                {
-                  day: String,
-                  isPresent: { type: Boolean, default: false },
-                },
-              ],
-            },
-          ],
-        },
-      ],
-    },
+
     photos: { type: [String], required: true },
   },
   { timestamps: true }

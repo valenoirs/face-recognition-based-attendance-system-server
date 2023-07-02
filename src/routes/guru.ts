@@ -16,7 +16,7 @@ export const router = Router()
 
 // POST
 router.post('/', upload.array('file'), add)
-router.post('/hadir', presence)
+router.post('/presence', presence)
 
 // GET
 router.get('/', getGuru)
